@@ -1,0 +1,1241 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Agent skills for teaching by Hyun Min Kang">
+      
+      
+        <meta name="author" content="Hyun Min Kang">
+      
+      
+        <link rel="canonical" href="https://hyunminkang.github.io/skills/canvas-quizbank/authoring-guide/">
+      
+      
+        <link rel="prev" href="../canvas/">
+      
+      
+        <link rel="next" href="../schema/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Authoring guide - Agent skills</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#authoring-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Agent skills" class="md-header__button md-logo" aria-label="Agent skills" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agent skills
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Authoring guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hyunminkang/skills" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hyunminkang/skills
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Agent skills" class="md-nav__button md-logo" aria-label="Agent skills" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Agent skills
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hyunminkang/skills" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hyunminkang/skills
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install a skill
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    canvas-quizbank
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            canvas-quizbank
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using the skill
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example-hwe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example: Hardy-Weinberg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Importing into Canvas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../canvas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Canvas details
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Authoring guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Authoring guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-an-item-certifies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What an item certifies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-ten-default-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The ten default rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-item-styles-and-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Item styles and types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-stems-options-explanations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Stems, options, explanations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-difficulty" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Difficulty
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-coverage-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The coverage plan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-verification-and-the-checks-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Verification and the checks file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Figures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-self-review-before-handing-over" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Self-review before handing over
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bank schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course profiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    More examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smoke-test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Smoke test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rejected-patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rejected patterns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-an-item-certifies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What an item certifies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-ten-default-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The ten default rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-item-styles-and-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Item styles and types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-stems-options-explanations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Stems, options, explanations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-difficulty" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Difficulty
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-coverage-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The coverage plan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-verification-and-the-checks-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Verification and the checks file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Figures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-self-review-before-handing-over" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Self-review before handing over
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="authoring-guide">Authoring guide<a class="headerlink" href="#authoring-guide" title="Permanent link">&para;</a></h1>
+<p>How to write items an instructor keeps. These defaults come from several
+rounds of instructor review of real banks. A course profile
+(<code>references/profile.md</code>) adds to them and wins when the two conflict.</p>
+<p>Contents: 1 what an item certifies · 2 the ten default rules · 3 item
+styles and types · 4 stems, options, explanations · 5 difficulty · 6 the
+coverage plan · 7 verification and the checks file · 8 figures ·
+9 self-review before handing over</p>
+<h2 id="1-what-an-item-certifies">1. What an item certifies<a class="headerlink" href="#1-what-an-item-certifies" title="Permanent link">&para;</a></h2>
+<p>Ask of every draft: <em>which idea from the material does a correct answer
+show the student understands?</em> If the honest answer is "a detail of one
+library's API" or "that they remember the slides", drop the item.</p>
+<h2 id="2-the-ten-default-rules">2. The ten default rules<a class="headerlink" href="#2-the-ten-default-rules" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Test the core idea, not trivia.</strong> Good targets are how a method works,
+   how its cost grows, what a key step does, and how it behaves numerically.
+   Asking about a key step of an implementation is fine. Never test a
+   library's calling convention, argument order, one implementation's quirks
+   or incidental naming. When the material <em>is</em> about a library (a chapter
+   on <code>purrr</code>, a pandas tutorial), test the ideas its functions embody
+   (what a map returns, that a reduction carries an accumulator, that a
+   predicate search stops early), not argument names, shortcuts or
+   aliases.</li>
+<li><strong>Answerable without these slides.</strong> Someone who knows the subject but
+   never saw this material must be able to answer it. Do not use the
+   material's private names for examples or strategies, its one-off
+   notation, its helper-function names or its classroom analogies. Use
+   standard terms and define every symbol in the stem. Code shown in full
+   may define any function it needs, but give helpers generic names
+   (<code>my_map</code>, <code>f</code>) rather than the material's.</li>
+<li><strong>Numbers are fine; arithmetic is not the point.</strong> Concrete numbers and
+   small examples are welcome, but any computation takes at most one or
+   two simple mental steps (16/4, (2 − 1)/0.5). Never require a
+   calculator, a full substitution, or more than about five quick checks.</li>
+<li><strong>Mix the styles in every bank.</strong> Combine symbolic items (Θ(n²) in
+   n, p, k), small concrete examples (a 2×2 matrix, five counts, a tiny
+   graph), short code with "what does this print?" or "which line fails?",
+   and realistic sizes where the arithmetic is mental (10,000 × 100). An
+   all-symbolic or all-code bank is a defect.</li>
+<li><strong>One clear question per stem.</strong> Say exactly what is compared, counted or
+   printed ("what does the last line print?", "how many times does <code>lm()</code>
+   run?"). No two-part stems. When the answer depends on what a library
+   call does and that behavior is <em>not</em> what the item tests, state it in
+   the stem ("<code>ecdf(x)</code> returns the empirical CDF as a function"). When the
+   behavior is the idea being tested, do not state it; make sure it is a
+   core idea (rule 1).</li>
+<li><strong>Options of the same shape.</strong> Options are parallel in form and similar
+   in length; the key is not the longest option. Put no "because ..."
+   clause in options: reasons belong in <code>explanation</code>. Prefer values
+   (outputs, numbers, Θ-classes) to prose. Avoid "all of the above" and
+   "none of the above" unless the idea really needs it.</li>
+<li><strong>Complete code that runs as printed.</strong> Show the whole function, not a
+   fragment. Run every snippet exactly as printed and recompute every number
+   in the stem, options and explanation (section 7).</li>
+<li><strong>No hints across items; even coverage.</strong> Code or text in one item must
+   not reveal another item's answer. Use each worked example about once.
+   Spread items evenly over the material's sections. Do not refer to
+   homework, exams, past terms or course-internal files.</li>
+<li><strong>Overdraft, then let the instructor trim.</strong> Draft about 1.3× the target
+   (e.g. 65 for a 50-item bank), with difficulty around ⅓ easy, ½ medium
+   and the rest hard, every item <code>status: draft</code>, and keys spread across
+   positions.</li>
+<li><strong>Explanations teach.</strong> Two to four sentences: why the key is right,
+    and what mistake leads to each tempting distractor. Canvas shows the
+    explanation as feedback after the attempt.</li>
+</ol>
+<h2 id="3-item-styles-and-types">3. Item styles and types<a class="headerlink" href="#3-item-styles-and-types" title="Permanent link">&para;</a></h2>
+<p><strong>Styles</strong> (use several in every bank):</p>
+<table>
+<thead>
+<tr>
+<th>style</th>
+<th>example stem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>predict the output</td>
+<td>"What does the last line print?"</td>
+</tr>
+<tr>
+<td>find the change</td>
+<td>"Exactly one of these one-line changes makes it return 4. Which?"</td>
+</tr>
+<tr>
+<td>find the error</td>
+<td>"Exactly one row of the table is wrong. Which one?"</td>
+</tr>
+<tr>
+<td>cost</td>
+<td>"What is the total cost of the factory call and the k calls?" (Θ)</td>
+</tr>
+<tr>
+<td>apply the idea to a new case</td>
+<td>"Which value can <code>b()</code> never return?"</td>
+</tr>
+<tr>
+<td>read a figure</td>
+<td>"Which statement about the counts must be true?"</td>
+</tr>
+<tr>
+<td>property</td>
+<td>"Which term can be dropped without moving the maximum?"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Types.</strong> Use multiple choice unless the instructor or profile asks for
+others, or the request says "mix in other types". When other types are
+allowed:</p>
+<ul>
+<li><code>numerical</code>: the answer is one number a student can get in one or two
+  mental steps (an estimate, a count, a probability). Give a tolerance or a
+  range that accepts reasonable rounding, and say in the stem how many
+  decimals to enter.</li>
+<li><code>multiple_answers</code>: "select all that apply" over 4 or 5 statements with 2
+  or 3 correct. Every statement is independently checkable.</li>
+<li><code>true_false</code>: only for a clean, important statement. Use sparingly (at
+  most about 1 in 20); true/false is the easiest type to guess.</li>
+</ul>
+<p>Canvas has more types (matching, fill in the blank); this skill does not
+build them.</p>
+<h2 id="4-stems-options-explanations">4. Stems, options, explanations<a class="headerlink" href="#4-stems-options-explanations" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Stem.</strong> Put the setup (code, formula, table, figure) first and the
+  question last, as its own short paragraph. Name variables generically
+  (<code>x</code>, <code>f</code>, <code>fit</code>), not after the lecture's examples. Fix nuisance
+  parameters so a Θ is in one variable.</li>
+<li><strong>Distractors</strong> come from real mistakes: the off-by-one count, forgetting
+  to divide by λ, the shared-state assumption, the value before an update,
+  n instead of n − 1. Every distractor must be clearly wrong to someone who
+  understands; if an expert could argue for it, rewrite it.</li>
+<li><strong>Options</strong> are 4 for multiple choice (3 is the minimum). Order numeric
+  options naturally or at random; the build keeps your order and Canvas
+  shuffles when <code>shuffle_answers: true</code> (the default).</li>
+<li><strong>Explanation.</strong> Say why the key is right, then name the mistake behind
+  the main distractors. Do not restate the question.</li>
+<li><strong>Formatting.</strong> Code in fenced blocks with a language (<code>```r</code>,
+  <code>```python</code>), math in <code>$...$</code> and <code>$$...$$</code>, tables as pipe
+  tables. See <code>schema.md</code> for the supported Markdown.</li>
+</ul>
+<h2 id="5-difficulty">5. Difficulty<a class="headerlink" href="#5-difficulty" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>easy:</strong> one idea, applied directly (predict a short output, recognize
+  a definition in use).</li>
+<li><strong>medium:</strong> one idea applied to a case the material did not show, or two
+  ideas combined in one short step.</li>
+<li><strong>hard:</strong> a subtle consequence (lazy evaluation in a loop, what memory a
+  closure keeps, a cost that changes with where work happens), still
+  answerable in about two minutes.</li>
+</ul>
+<p>Hard never means long, tricky wording or heavy arithmetic.</p>
+<h2 id="6-the-coverage-plan">6. The coverage plan<a class="headerlink" href="#6-the-coverage-plan" title="Permanent link">&para;</a></h2>
+<p>Show this to the instructor before drafting, on one screen:</p>
+<div class="highlight"><pre><span></span><code>Bank: &lt;title&gt;                       Target: 50 kept → draft 65
+Source: lecture09.pptx (155 slides), notes09.pdf (12 pages)
+Languages: R, Python                Types: multiple choice only
+
+section (source)                  objectives                         items  e/m/h
+Seeds and generators (sl. 4-20)   seeds, period, Lehmer generator       8   3/4/1
+Inverse transform (sl. 21-35)     continuous, discrete, Box-Muller      9   3/5/1
+...
+Total                                                                  65  22/32/11
+
+Figures: 3 (a histogram, two density sketches). Not covered: &lt;sections and why&gt;.
+</code></pre></div>
+<p>Wait for an OK or edits. On "just build it", skip the plan and use the
+defaults.</p>
+<h2 id="7-verification-and-the-checks-file">7. Verification and the checks file<a class="headerlink" href="#7-verification-and-the-checks-file" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Run every code snippet as printed, in its own language. Recompute every
+  number in stems, options and explanations. Check that each distractor is
+  wrong.</li>
+<li>Save the code you ran next to the bank as <code>&lt;bank&gt;.checks.R</code> and/or
+  <code>&lt;bank&gt;.checks.py</code>. It runs top to bottom, stops at the first failed
+  check, and has one section per item, headed <code># ---- &lt;id&gt;</code>. The validator
+  warns when a <code>verified: run</code> item has no section. Wrap each section so
+  one item's objects cannot change another's result:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># &lt;bank&gt;.checks.R — run: Rscript &lt;bank&gt;.checks.R</span>
+<span class="n">check</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">isTRUE</span><span class="p">(</span><span class="n">ok</span><span class="p">))</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="s">&quot;check failed: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">call.</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">cat</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">cat</span><span class="p">(</span><span class="n">R.version.string</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span><span class="w">            </span><span class="c1"># record versions of what you use</span>
+<span class="c1"># ---- ff-004: two counters</span>
+<span class="nf">local</span><span class="p">({</span>
+<span class="w">  </span><span class="n">...code</span><span class="w"> </span><span class="n">exactly</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">printed</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">item...</span>
+<span class="w">  </span><span class="nf">check</span><span class="p">(</span><span class="s">&quot;ff-004&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">identical</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="nf">a</span><span class="p">(),</span><span class="w"> </span><span class="nf">a</span><span class="p">(),</span><span class="w"> </span><span class="nf">b</span><span class="p">(),</span><span class="w"> </span><span class="nf">a</span><span class="p">()),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)))</span>
+<span class="p">})</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;all checks passed\n&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># &lt;bank&gt;.checks.py — run: python3 &lt;bank&gt;.checks.py</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">item_id</span><span class="p">,</span> <span class="n">ok</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;check failed: </span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="n">item_id</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="c1"># ---- ff-004: two counters</span>
+<span class="k">def</span> <span class="nf">_ff_004</span><span class="p">():</span>
+    <span class="o">...</span><span class="n">code</span> <span class="n">exactly</span> <span class="k">as</span> <span class="n">printed</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">item</span><span class="o">...</span>
+    <span class="n">check</span><span class="p">(</span><span class="s2">&quot;ff-004&quot;</span><span class="p">,</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">_ff_004</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;all checks passed&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>When an item's answer depends on a fresh session (for example "object
+  not found"), run that snippet on its own as well (<code>Rscript --vanilla
+  -e '...'</code>, <code>python3 -I -c '...'</code>).
+- Packages: load them in the section that uses them and print their
+  versions. If a package the item needs is missing and cannot be installed,
+  either rewrite the item with base functions (when the idea does not
+  depend on the package) or mark it <code>verified: no</code> with the reason.
+- Set <code>verified: run</code> only if the item's checks ran and passed. Otherwise
+  set <code>verified: no</code> and a <code>verify_note</code> saying why ("R not available in
+  this sandbox", "conceptual: nothing to execute"). Never "verify" R code by
+  translating it to Python: random streams, integer types and printing
+  differ between languages, and those are often what the item tests.
+- A conceptual item with nothing to run can still check its numbers (a
+  formula evaluated at the stem's values).
+- Do not ask for the values of a language's own random generator unless
+  the seed and generator are fixed in the stem and the item says which
+  language; R and NumPy give different draws for the same seed.</p>
+<h2 id="8-figures">8. Figures<a class="headerlink" href="#8-figures" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Use a figure only when the picture carries the idea (a curve's shape, a
+  histogram's skew, a matrix's sparsity pattern). If a table or printed
+  output says the same thing, use that.</li>
+<li>Draw with R (<code>png(..., width = 640, height = 400, res = 110)</code>) or
+  matplotlib (<code>figsize=(6.4, 4), dpi=100</code>). Keep text at least 10 pt and
+  labels on the axes. Do not encode meaning by color alone.</li>
+<li>Save as PNG under <code>figures/</code> next to the YAML, and keep the drawing code
+  in the checks file.</li>
+<li>Alt text (required) describes what a student needs to answer: the axes,
+  the shape and any marked values. It may contain the value a sighted
+  student reads off the figure; it must not contain the conclusion the item
+  asks for.</li>
+<li>To reuse a figure from the material, take it from the extractor's
+  <code>media/</code> folder (a PPTX picture or a rendered PDF page), cropped to the
+  figure.</li>
+</ul>
+<h2 id="9-self-review-before-handing-over">9. Self-review before handing over<a class="headerlink" href="#9-self-review-before-handing-over" title="Permanent link">&para;</a></h2>
+<p>Run this over the whole bank, not only the newest items:</p>
+<ul>
+<li>[ ] <code>validate_bank.py --require-source --report</code> shows 0 errors; warnings
+      are read and either fixed or explained.</li>
+<li>[ ] Every item's <code>source</code> points at a real slide, page or section.</li>
+<li>[ ] Key positions are spread out; the report's "key clearly the longest
+      option" list is short (it is informational; when the long key is
+      unavoidable, e.g. an option describing an error, say so in the
+      hand-over).</li>
+<li>[ ] No item uses a name or symbol the stem does not define.</li>
+<li>[ ] No two items test the same example the same way, and no item answers
+      another.</li>
+<li>[ ] Every <code>verified: no</code> has a reason, and they are listed for the
+      instructor.</li>
+<li>[ ] The styles of section 3 are mixed.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../canvas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Canvas details">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Canvas details
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../schema/" class="md-footer__link md-footer__link--next" aria-label="Next: Bank schema">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Bank schema
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2026 Hyun Min Kang · Apache License 2.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

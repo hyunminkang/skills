@@ -1,0 +1,1128 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Agent skills for teaching by Hyun Min Kang">
+      
+      
+        <meta name="author" content="Hyun Min Kang">
+      
+      
+        <link rel="canonical" href="https://hyunminkang.github.io/skills/canvas-quizbank/scripts/">
+      
+      
+        <link rel="prev" href="../profiles/">
+      
+      
+        <link rel="next" href="../examples/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Scripts - Agent skills</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scripts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Agent skills" class="md-header__button md-logo" aria-label="Agent skills" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agent skills
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scripts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hyunminkang/skills" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hyunminkang/skills
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Agent skills" class="md-nav__button md-logo" aria-label="Agent skills" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Agent skills
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hyunminkang/skills" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hyunminkang/skills
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install a skill
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    canvas-quizbank
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            canvas-quizbank
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using the skill
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example-hwe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example: Hardy-Weinberg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Importing into Canvas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../canvas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Canvas details
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authoring-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authoring guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bank schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course profiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#package_bankpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      package_bank.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_materialpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_material.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validate_bankpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      validate_bank.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build_qtipy" class="md-nav__link">
+    <span class="md-ellipsis">
+      build_qti.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sync_from_canvaspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      sync_from_canvas.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mdrenderpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      mdrender.py
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    More examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smoke-test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Smoke test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rejected-patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rejected patterns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#package_bankpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      package_bank.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_materialpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_material.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validate_bankpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      validate_bank.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build_qtipy" class="md-nav__link">
+    <span class="md-ellipsis">
+      build_qti.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sync_from_canvaspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      sync_from_canvas.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mdrenderpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      mdrender.py
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">&para;</a></h1>
+<p>The agent runs these for you, but they also work by hand. They live in
+<code>skills/canvas-quizbank/scripts/</code> and need only Python 3.9 or newer; PyYAML
+is bundled in <code>scripts/_vendor/</code> for environments without it. Every script
+prints its options with <code>--help</code>.</p>
+<h2 id="package_bankpy">package_bank.py<a class="headerlink" href="#package_bankpy" title="Permanent link">&para;</a></h2>
+<p>The usual last step: validates the bank, builds the Canvas package, checks
+it against the YAML, writes the review sheet, and bundles everything else.</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>scripts/package_bank.py<span class="w"> </span>bank.yaml<span class="w"> </span>--out<span class="w"> </span>downloads/<span class="w"> </span>--notes<span class="w"> </span>notes.md
+</code></pre></div>
+<ul>
+<li><strong>Output:</strong> <code>downloads/bank.qti.zip</code> (import into Canvas) and
+  <code>downloads/bank-source-and-review.zip</code>. The second zip is a folder
+  <code>bank/</code> with the YAML, the review sheet, the checks files, the figures
+  the items use, and a README (summary, unverified items, notes, import and
+  sync steps). It unzips into a folder whose YAML rebuilds as is.</li>
+<li><strong>Options:</strong> <code>--notes FILE</code> adds Markdown notes to the README;
+  <code>--mode</code>, <code>--image-mode</code> and <code>--reviewed-only</code> work as in
+  <code>build_qti.py</code>.</li>
+<li>Nothing is written if validation or the package check fails.</li>
+</ul>
+<h2 id="extract_materialpy">extract_material.py<a class="headerlink" href="#extract_materialpy" title="Permanent link">&para;</a></h2>
+<p>Turns class material into one numbered outline for drafting.</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>scripts/extract_material.py<span class="w"> </span>lecture.pptx<span class="w"> </span>notes.pdf<span class="w"> </span>-o<span class="w"> </span>work/extracted
+</code></pre></div>
+<ul>
+<li><strong>Output:</strong> <code>work/extracted/outline.md</code> and <code>work/extracted/media/&lt;file&gt;/</code>.</li>
+<li><strong>Inputs:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>what is extracted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.pptx</code></td>
+<td>slide titles, bullets with levels, tables, speaker notes, pictures, hidden-slide flags</td>
+</tr>
+<tr>
+<td><code>.docx</code></td>
+<td>headings, paragraphs, lists, tables, pictures; equations as plain text</td>
+</tr>
+<tr>
+<td><code>.ipynb</code></td>
+<td>Markdown cells; code cells with their language; text and image outputs</td>
+</tr>
+<tr>
+<td><code>.md</code>, <code>.Rmd</code>, <code>.qmd</code></td>
+<td>as is; Marp decks are split into slides, with <code>&lt;!-- notes --&gt;</code> listed</td>
+</tr>
+<tr>
+<td><code>.html</code></td>
+<td>text, code, lists and tables; KaTeX and MathJax v2 math recovered as <code>$TeX$</code></td>
+</tr>
+<tr>
+<td><code>.tex</code></td>
+<td>as is; Beamer decks split by frame</td>
+</tr>
+<tr>
+<td><code>.pdf</code></td>
+<td>per-page text (<code>pdftotext</code> or <code>pypdf</code>); pages with pictures are flagged</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Options:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-o DIR</code></td>
+<td>output folder (default <code>extracted</code>)</td>
+</tr>
+<tr>
+<td><code>--pages-png [--dpi N]</code></td>
+<td>render PDF pages to PNG, to crop figures from</td>
+</tr>
+<tr>
+<td><code>--pdf-images</code></td>
+<td>save the pictures embedded in a PDF</td>
+</tr>
+</tbody>
+</table>
+<h2 id="validate_bankpy">validate_bank.py<a class="headerlink" href="#validate_bankpy" title="Permanent link">&para;</a></h2>
+<p>Checks banks against the <a href="../schema/">schema</a>, and optionally the built
+package against its bank. Exits 1 on any error.</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>scripts/validate_bank.py<span class="w"> </span>bank.yaml<span class="w"> </span>--require-source<span class="w"> </span>--report
+python3<span class="w"> </span>scripts/validate_bank.py<span class="w"> </span>bank.yaml<span class="w"> </span>--qti<span class="w"> </span>bank.qti.zip
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--report</code></td>
+<td>coverage summary: difficulty, types, status, key positions, objectives</td>
+</tr>
+<tr>
+<td><code>--require-source</code></td>
+<td>a missing <code>source</code> is an error (use for new drafts)</td>
+</tr>
+<tr>
+<td><code>--qti ZIP</code></td>
+<td>open the package and check its manifest, namespaces, images, and every item's type and answer key against the YAML</td>
+</tr>
+<tr>
+<td><code>--reviewed-only</code></td>
+<td>with <code>--qti</code>, for a package built with <code>--reviewed-only</code></td>
+</tr>
+<tr>
+<td><code>--strict</code></td>
+<td>treat warnings as errors</td>
+</tr>
+<tr>
+<td><code>--verbose</code></td>
+<td>list every warning instead of grouping them</td>
+</tr>
+</tbody>
+</table>
+<h2 id="build_qtipy">build_qti.py<a class="headerlink" href="#build_qtipy" title="Permanent link">&para;</a></h2>
+<p>Builds the Canvas package and, optionally, the review sheet. The bank is
+validated first; any error stops the build.</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>scripts/build_qti.py<span class="w"> </span>bank.yaml<span class="w"> </span>-o<span class="w"> </span>bank.qti.zip<span class="w"> </span>--review-md<span class="w"> </span>bank.review.md
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-o ZIP</code></td>
+<td>output file (default: <code>bank.qti.zip</code> next to the YAML)</td>
+</tr>
+<tr>
+<td><code>--review-md FILE</code></td>
+<td>also write the answer-keyed review sheet</td>
+</tr>
+<tr>
+<td><code>--mode assessment</code></td>
+<td>default; for New Quizzes item banks, or a quiz in Classic</td>
+</tr>
+<tr>
+<td><code>--mode objectbank</code></td>
+<td>a named question bank in Classic Quizzes</td>
+</tr>
+<tr>
+<td><code>--reviewed-only</code></td>
+<td>package only <code>status: reviewed</code> items</td>
+</tr>
+<tr>
+<td><code>--no-id-in-title</code></td>
+<td>titles without the id prefix (sync then matches by text)</td>
+</tr>
+<tr>
+<td><code>--image-mode inline</code></td>
+<td>embed figures as <code>data:</code> URIs instead of bundling files</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sync_from_canvaspy">sync_from_canvas.py<a class="headerlink" href="#sync_from_canvaspy" title="Permanent link">&para;</a></h2>
+<p>Records a review done in Canvas: kept items become <code>reviewed</code>, the others
+<code>removed</code>. It runs as a dry run unless <code>--write</code> is given.</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>scripts/sync_from_canvas.py<span class="w"> </span>bank.yaml<span class="w"> </span>--export<span class="w"> </span>canvas-export.zip
+python3<span class="w"> </span>scripts/sync_from_canvas.py<span class="w"> </span>bank.yaml<span class="w"> </span>--kept-ids<span class="w"> </span>kept.txt<span class="w"> </span>--write
+</code></pre></div>
+<ul>
+<li><strong><code>--export</code>:</strong> any zip Canvas produces (a QTI quiz export, or a Classic
+  <code>.imscc</code> course export); the option can be repeated.</li>
+<li><strong><code>--kept-ids</code>:</strong> a text file with one id or one Canvas title per line.</li>
+<li><strong>Matching:</strong> items are matched by the id at the start of their title,
+  and by question text when a title has no id.</li>
+<li><strong>Reported:</strong> items added in Canvas and items whose text was edited
+  there.</li>
+<li><strong>With <code>--write</code>:</strong> only <code>status:</code> lines change and a <code>.bak</code> copy is kept.
+  The file is re-read to confirm that nothing else changed; if anything
+  did, the original is restored.</li>
+</ul>
+<h2 id="mdrenderpy">mdrender.py<a class="headerlink" href="#mdrenderpy" title="Permanent link">&para;</a></h2>
+<p>The Markdown and math renderer behind <code>build_qti.py</code>, using only the
+standard library. The supported Markdown is listed in the
+<a href="../schema/#markdown">schema</a>. <code>python3 scripts/mdrender.py &lt; item.md</code>
+prints the HTML Canvas will receive.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../profiles/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Course profiles">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Course profiles
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../examples/" class="md-footer__link md-footer__link--next" aria-label="Next: More examples">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                More examples
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2026 Hyun Min Kang · Apache License 2.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
