@@ -804,16 +804,16 @@
 
 <h1 id="development">Development<a class="headerlink" href="#development" title="Permanent link">&para;</a></h1>
 <h2 id="repository-layout">Repository layout<a class="headerlink" href="#repository-layout" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>skills/&lt;name&gt;/          one folder per skill: SKILL.md + scripts/ references/ examples/
-zip/claude/&lt;name&gt;.zip   generated: skill folder inside the zip (Claude.ai, ChatGPT)
-zip/gemini/&lt;name&gt;.zip   generated: SKILL.md at the zip root (Gemini)
-samples/&lt;name&gt;/         ready-made outputs (e.g. Canvas QTI packages) for people to try
-examples/&lt;example&gt;/     end-to-end runs: input material, prompt, and each platform&#39;s downloads
-docs/                   this site; reference pages include the skills&#39; own files
-tests/                  standard-library unittest suites
-tools/build_zips.py     checks, tests and zips every skill
-mkdocs.yml              site configuration
-LICENSE, NOTICE         Apache 2.0 and third-party attributions
+<div class="highlight"><pre><span></span><code>skills/&lt;name&gt;/             one folder per skill: SKILL.md + scripts/ references/ examples/
+zip/claude/&lt;name&gt;.zip      generated: skill folder inside the zip (Claude.ai, ChatGPT)
+zip/gemini/&lt;name&gt;.zip      generated: SKILL.md at the zip root (Gemini)
+samples/&lt;name&gt;/            ready-made outputs (e.g. Canvas QTI packages) for people to try
+samples/&lt;name&gt;/&lt;example&gt;/  end-to-end runs: input material, prompt, and each platform&#39;s downloads
+docs/                      this site; reference pages include the skills&#39; own files
+tests/                     standard-library unittest suites
+tools/build_zips.py        checks, tests and zips every skill
+mkdocs.yml                 site configuration
+LICENSE, NOTICE            Apache 2.0 and third-party attributions
 </code></pre></div>
 <h2 id="after-changing-a-skill">After changing a skill<a class="headerlink" href="#after-changing-a-skill" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>tests<span class="w">     </span><span class="c1"># the tests alone</span>
