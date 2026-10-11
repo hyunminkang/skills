@@ -2,7 +2,7 @@
 
 One lecture and one request, run with the skill on Claude.ai, ChatGPT and
 Gemini. All files are in the repository's
-[`examples/hwe/`](https://github.com/hyunminkang/skills/tree/main/examples/hwe)
+[`samples/canvas-quizbank/hwe/`](https://github.com/hyunminkang/skills/tree/main/samples/canvas-quizbank/hwe)
 folder.
 
 ## The input

@@ -1,8 +1,10 @@
-# Ready-made Canvas packages
+# Samples
 
-QTI packages built from the skills' examples, to import into Canvas
-directly. They live here rather than inside the skills because a skill zip
-may not contain other zips (Claude.ai rejects it).
+Ready-made outputs to try: QTI packages built from the skills' examples, to
+import into Canvas directly, and end-to-end runs of a skill on the chat
+platforms. They live here rather than inside the skills because a skill zip
+may not contain other zips (Claude.ai rejects it), and because they are for
+people to look at, not for the agent to read.
 
 ## canvas-quizbank
 
@@ -15,6 +17,20 @@ may not contain other zips (Claude.ai rejects it).
 
 What to check after importing:
 `skills/canvas-quizbank/examples/smoke-test/README.md`.
+
+### Worked example: `hwe/`
+
+One public genetics lecture (Hardy-Weinberg equilibrium) and one request,
+run with the skill on Claude.ai, ChatGPT and Gemini:
+
+| folder | what it holds |
+|---|---|
+| `hwe/input/` | the lecture PDF and the prompt |
+| `hwe/output/<platform>/` | the two downloads each platform handed back |
+
+See [`canvas-quizbank/hwe/README.md`](canvas-quizbank/hwe/README.md) for
+the results and how to check them. The lecture PDF belongs to its author
+and is not covered by this repository's license; see `NOTICE`.
 
 To rebuild after changing an example (from the repository root):
 

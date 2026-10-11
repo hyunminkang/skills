@@ -24,14 +24,15 @@ its own copyright and license.
 
 2. Lecture slides used as example input
 
-   Location: examples/hwe/input/666.02.pdf
+   Location: samples/canvas-quizbank/hwe/input/666.02.pdf
    Source:   https://csg.sph.umich.edu/abecasis/class/666.02.pdf
 
    "Lecture 02, Hardy Weinberg Equilibrium", from BIOSTAT 666 "Models in
    Human Genetics" by Gonçalo Abecasis, University of Michigan. Copyright
    remains with the author. The file is included unchanged as the input of
-   the worked example in examples/hwe/ and is not covered by this
-   repository's Apache License. The quiz banks in examples/hwe/output/ were
+   the worked example in samples/canvas-quizbank/hwe/ and is not covered by
+   this repository's Apache License. It is not part of the skill or its
+   zips. The quiz banks in samples/canvas-quizbank/hwe/output/ were
    generated from it by AI assistants.
 
 

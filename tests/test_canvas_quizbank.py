@@ -167,11 +167,11 @@ class PackageTest(unittest.TestCase):
 
 
 class ExampleRunsTest(unittest.TestCase):
-    """examples/<example>/output/<platform>/ hold what each chat platform handed back:
-    <bank>.qti.zip plus <bank>-source-and-review.zip. Both must still pass."""
+    """samples/<skill>/<example>/output/<platform>/ hold what each chat platform handed
+    back: <bank>.qti.zip plus <bank>-source-and-review.zip. Both must still pass."""
 
     def test_every_platform_output_validates(self):
-        bundles = sorted((ROOT / "examples").glob("*/output/*/*-source-and-review.zip"))
+        bundles = sorted((ROOT / "samples").glob("*/*/output/*/*-source-and-review.zip"))
         self.assertTrue(bundles, "no example outputs found")
         for bundle in bundles:
             with self.subTest(bundle=str(bundle.relative_to(ROOT))), \

@@ -16,9 +16,10 @@ agents that read Agent Skills.
 
 ## See it in action
 
-[`examples/hwe/`](examples/hwe/) runs canvas-quizbank on one public
-genetics lecture (Hardy-Weinberg equilibrium) in Claude.ai, ChatGPT and
-Gemini, with the prompt and each platform's downloads. After import, the
+[`samples/canvas-quizbank/hwe/`](samples/canvas-quizbank/hwe/) runs
+canvas-quizbank on one public genetics lecture (Hardy-Weinberg
+equilibrium) in Claude.ai, ChatGPT and Gemini, with the prompt and each
+platform's downloads. After import, the
 items look like this in Canvas:
 
 ![An imported item in Canvas New Quizzes with rendered math: the two-sided exact HWE p-value for a single copy of the minor allele.](docs/canvas-quizbank/images/canvas-import-3-imported-items.png)
@@ -57,14 +58,14 @@ step-by-step instructions for each app and agent, Windows commands,
 ## Repository layout
 
 ```
-skills/<name>/       the skills: SKILL.md plus scripts, references, examples
-zip/claude/<name>.zip   upload for Claude.ai, ChatGPT (skill folder inside the zip)
-zip/gemini/<name>.zip   upload for Gemini (SKILL.md at the zip root)
-samples/<name>/      ready-made outputs to try (e.g. Canvas packages); never inside a skill
-examples/<example>/  end-to-end runs: input, prompt, and what each platform handed back
-docs/                documentation site (MkDocs Material), built with mkdocs.yml
-tests/               standard-library tests: python3 -m unittest discover -s tests
-tools/build_zips.py  checks every skill, runs the tests, rebuilds zip/
+skills/<name>/             the skills: SKILL.md plus scripts, references, examples
+zip/claude/<name>.zip      upload for Claude.ai, ChatGPT (skill folder inside the zip)
+zip/gemini/<name>.zip      upload for Gemini (SKILL.md at the zip root)
+samples/<name>/            ready-made outputs to try (e.g. Canvas packages); never inside a skill
+samples/<name>/<example>/  end-to-end runs: input, prompt, and what each platform handed back
+docs/                      documentation site (MkDocs Material), built with mkdocs.yml
+tests/                     standard-library tests: python3 -m unittest discover -s tests
+tools/build_zips.py        checks every skill, runs the tests, rebuilds zip/
 ```
 
 After editing a skill, run `python3 tools/build_zips.py` and commit the

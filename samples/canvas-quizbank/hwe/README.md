@@ -56,14 +56,14 @@ Notes:
 See [Importing into Canvas](https://hyunminkang.github.io/skills/canvas-quizbank/import/)
 for the steps with screenshots. This is the Claude.ai bank after import:
 
-![The imported bank in Canvas New Quizzes, showing item hwe-026 with rendered math: the two-sided exact HWE p-value for a single copy of the minor allele, with options 1/(2N), 1/N, 0.5 and 1.](../../docs/canvas-quizbank/images/canvas-import-3-imported-items.png)
+![The imported bank in Canvas New Quizzes, showing item hwe-026 with rendered math: the two-sided exact HWE p-value for a single copy of the minor allele, with options 1/(2N), 1/N, 0.5 and 1.](../../../docs/canvas-quizbank/images/canvas-import-3-imported-items.png)
 
 ## Try it yourself
 
 From the repository root, check any output against the skill's rules:
 
 ```bash
-mkdir -p /tmp/hwe && unzip -o examples/hwe/output/claude-opus-5-5/hardy-weinberg-source-and-review.zip -d /tmp/hwe
+mkdir -p /tmp/hwe && unzip -o samples/canvas-quizbank/hwe/output/claude-opus-5-5/hardy-weinberg-source-and-review.zip -d /tmp/hwe
 python3 skills/canvas-quizbank/scripts/validate_bank.py /tmp/hwe/hardy-weinberg/hardy-weinberg.yaml \
-  --report --qti examples/hwe/output/claude-opus-5-5/hardy-weinberg.qti.zip
+  --report --qti samples/canvas-quizbank/hwe/output/claude-opus-5-5/hardy-weinberg.qti.zip
 ```

@@ -3,16 +3,16 @@
 ## Repository layout
 
 ```
-skills/<name>/          one folder per skill: SKILL.md + scripts/ references/ examples/
-zip/claude/<name>.zip   generated: skill folder inside the zip (Claude.ai, ChatGPT)
-zip/gemini/<name>.zip   generated: SKILL.md at the zip root (Gemini)
-samples/<name>/         ready-made outputs (e.g. Canvas QTI packages) for people to try
-examples/<example>/     end-to-end runs: input material, prompt, and each platform's downloads
-docs/                   this site; reference pages include the skills' own files
-tests/                  standard-library unittest suites
-tools/build_zips.py     checks, tests and zips every skill
-mkdocs.yml              site configuration
-LICENSE, NOTICE         Apache 2.0 and third-party attributions
+skills/<name>/             one folder per skill: SKILL.md + scripts/ references/ examples/
+zip/claude/<name>.zip      generated: skill folder inside the zip (Claude.ai, ChatGPT)
+zip/gemini/<name>.zip      generated: SKILL.md at the zip root (Gemini)
+samples/<name>/            ready-made outputs (e.g. Canvas QTI packages) for people to try
+samples/<name>/<example>/  end-to-end runs: input material, prompt, and each platform's downloads
+docs/                      this site; reference pages include the skills' own files
+tests/                     standard-library unittest suites
+tools/build_zips.py        checks, tests and zips every skill
+mkdocs.yml                 site configuration
+LICENSE, NOTICE            Apache 2.0 and third-party attributions
 ```
 
 ## After changing a skill
