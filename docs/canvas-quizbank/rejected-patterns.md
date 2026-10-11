@@ -1,0 +1,1 @@
+--8<-- "skills/canvas-quizbank/examples/rejected-patterns.md"

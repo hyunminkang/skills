@@ -1,0 +1,58 @@
+Agent skills
+Copyright 2026 Hyun Min Kang
+
+This repository is licensed under the Apache License, Version 2.0 (see
+LICENSE). It includes the third-party material listed below, which keeps
+its own copyright and license.
+
+
+1. PyYAML 6.0.3
+
+   Location: skills/canvas-quizbank/scripts/_vendor/yaml/
+             (also inside zip/claude/canvas-quizbank.zip and
+             zip/gemini/canvas-quizbank.zip)
+   Source:   https://github.com/yaml/pyyaml
+   License:  MIT; the full text is in
+             skills/canvas-quizbank/scripts/_vendor/yaml/LICENSE.txt
+
+   Copyright (c) 2017-2021 Ingy döt Net
+   Copyright (c) 2006-2016 Kirill Simonov
+
+   Bundled unmodified as a fallback YAML parser for sandboxes where PyYAML
+   is not installed.
+
+
+2. Lecture slides used as example input
+
+   Location: examples/hwe/input/666.02.pdf
+   Source:   https://csg.sph.umich.edu/abecasis/class/666.02.pdf
+
+   "Lecture 02, Hardy Weinberg Equilibrium", from BIOSTAT 666 "Models in
+   Human Genetics" by Gonçalo Abecasis, University of Michigan. Copyright
+   remains with the author. The file is included unchanged as the input of
+   the worked example in examples/hwe/ and is not covered by this
+   repository's Apache License. The quiz banks in examples/hwe/output/ were
+   generated from it by AI assistants.
+
+
+3. Example quiz bank based on "Advanced R"
+
+   Location: skills/canvas-quizbank/examples/advanced-r-function-factories/
+             (built as samples/canvas-quizbank/function-factories.qti.zip)
+   Source:   https://adv-r.hadley.nz/function-factories.html
+
+   The items test ideas from Chapter 10, "Function factories", of
+   "Advanced R" (2nd edition) by Hadley Wickham. The book is licensed under
+   CC BY-NC-SA 4.0 and its code under MIT. The questions, choices,
+   explanations, code and figure were written for this example; no text is
+   copied from the book. See ATTRIBUTION.md in that folder.
+
+
+Trademarks
+
+Canvas is a trademark of Instructure, Inc. Claude is a trademark of
+Anthropic; ChatGPT and Codex of OpenAI; Gemini and Antigravity of Google
+LLC. Other product names belong to their owners. This project is not
+affiliated with or endorsed by any of them. The screenshots in
+docs/canvas-quizbank/images/ show the Canvas interface to document the
+import steps.

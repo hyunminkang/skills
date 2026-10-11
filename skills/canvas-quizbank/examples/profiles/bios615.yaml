@@ -1,0 +1,39 @@
+# Profile for a graduate statistical computing course (BIOSTAT 615, University
+# of Michigan, Fall 2026). The rules below came out of the instructor's reviews
+# of about 500 drafted review-bank items.
+
+course: "BIOSTAT 615: AI-assisted Statistical Programming"
+audience: >
+  Biostatistics MS and PhD students who program in R and Python and know
+  introductory probability, linear models and linear algebra.
+
+languages: [R, Python]
+types: [multiple_choice]
+
+bank:
+  target_items: 50
+  overdraft: 1.4        # the instructor asked for 60-80 drafts per topic to trim
+  difficulty_mix: {easy: 0.33, medium: 0.5, hard: 0.17}
+  id_prefix: "t{topic}-"   # t9-001 for topic 9
+  points: 1
+
+notation:
+  - "Covariance matrices are V (V1, V^{-1}), never Sigma: Σ reads as a summation."
+  - "Sample means are \\overline{X} and \\overline{x}, not \\bar{X}."
+  - "Definitions and formulas use symbols (a threshold t, a correlation rho); a number appears only beside a computed result ('for t = 5: ...')."
+  - "Complexity is stated in Θ() notation ('runs in Θ(n²); which change makes it Θ(n)?'), with nuisance parameters fixed so Θ is in one variable."
+  - "Relative error is the average of |estimate/θ − 1|, reported to 3 significant digits; never relative RMSE."
+  - "Importance sampling: do not call anything a 'weight'; state the averaged quantity (f(X)/q(X)) explicitly."
+  - "Numbers in one table or list share one precision."
+
+avoid:
+  - "Any mention of a past term or past offering of the course, in items, explanations or code comments."
+  - "Questions or explanations that refer to a homework, its solutions or its function names."
+  - "Values drawn from R's or NumPy's own generators: the same seed gives different draws. Use supplied uniforms, a hand-written generator, or seed-free statistics."
+  - "In banks that feed an exam: Union-Find items and items on AI-assisted coding tools."
+  - "More than about two numerical-precision items per bank."
+
+rules:
+  - "Prefer small traceable inputs (fib_memo(5), not fib_memo(30) with a memorized formula)."
+  - "When code is shown, it is complete and generic in naming; a question about a library call states what the call does."
+  - "Rejected styles from past reviews: counting loop iterations, Strassen call counts, by-hand LU/Cholesky/QR steps, timing extrapolation in seconds, more than two traces of one worked example."

@@ -1,0 +1,60 @@
+site_name: Agent skills
+site_description: Agent skills for teaching by Hyun Min Kang
+site_author: Hyun Min Kang
+site_url: https://hyunminkang.github.io/skills/
+repo_url: https://github.com/hyunminkang/skills
+repo_name: hyunminkang/skills
+edit_uri: edit/main/docs/
+copyright: Copyright 2026 Hyun Min Kang · Apache License 2.0
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle: {icon: material/brightness-7, name: Switch to dark mode}
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle: {icon: material/brightness-4, name: Switch to light mode}
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  # Reference pages include the skill's own files, so the docs never drift
+  # from what the agent reads: --8<-- "skills/<name>/references/<file>.md"
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+
+nav:
+  - Home: index.md
+  - Install a skill: install.md
+  - canvas-quizbank:
+      - Overview: canvas-quizbank/index.md
+      - Install: canvas-quizbank/install.md
+      - Using the skill: canvas-quizbank/usage.md
+      - "Example: Hardy-Weinberg": canvas-quizbank/example-hwe.md
+      - Importing into Canvas: canvas-quizbank/import.md
+      - Canvas details: canvas-quizbank/canvas.md
+      - Authoring guide: canvas-quizbank/authoring-guide.md
+      - Bank schema: canvas-quizbank/schema.md
+      - Course profiles: canvas-quizbank/profiles.md
+      - Scripts: canvas-quizbank/scripts.md
+      - More examples: canvas-quizbank/examples.md
+      - Smoke test: canvas-quizbank/smoke-test.md
+      - Rejected patterns: canvas-quizbank/rejected-patterns.md
+  - Development: development.md

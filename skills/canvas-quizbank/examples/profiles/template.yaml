@@ -1,0 +1,20 @@
+# quizbank_profile.yaml: one course's conventions for the canvas-quizbank skill.
+# Every field is optional. Precedence: the instructor's request > this file >
+# the skill's default rules (references/authoring-guide.md).
+
+course: ""            # e.g. "STAT 101: Introduction to Statistics"
+audience: ""          # who answers; what they already know
+
+languages: []         # code languages items may use, e.g. [R] or [Python, R]; [] = no code
+types: [multiple_choice]   # allowed: multiple_choice, multiple_answers, numerical, true_false
+
+bank:
+  target_items: 50    # items wanted after the instructor trims
+  overdraft: 1.3      # how many times the target to draft
+  difficulty_mix: {easy: 0.33, medium: 0.5, hard: 0.17}
+  id_prefix: ""       # e.g. "w05-" gives w05-001, w05-002, ...
+  points: 1
+
+notation: []          # writing conventions, one per line
+avoid: []             # things never to include
+rules: []             # extra rules in the instructor's words

@@ -1,0 +1,1 @@
+/canvas-quizbank draft ~25 Canvas quiz questions from my lecture slides for me to review. Include at least one true/false questions, one multiple-answer questions, one short answer (numeric answers) questions while making most questions as MCQ. Include at least one image, multiple mathematical equations, and multiple code blocks (mixture of R and python) in the quiz problems.

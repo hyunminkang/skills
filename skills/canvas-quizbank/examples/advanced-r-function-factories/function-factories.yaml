@@ -1,0 +1,628 @@
+title: "Example Bank: Function Factories in R"
+
+description: |
+  Example bank for the canvas-quizbank skill, written from Chapter 10
+  ("Function factories") of Hadley Wickham's Advanced R, 2nd edition
+  (https://adv-r.hadley.nz/function-factories.html, CC BY-NC-SA 4.0; code
+  MIT). Question wording and code are original; `source` cites the section
+  each item tests. See ATTRIBUTION.md.
+
+  It shows every feature of the schema: multiple choice (the default), one
+  multiple-answer, one numerical and one true/false item, inline and display
+  math, R code blocks, a table and a figure. Every snippet was run as printed
+  and every number recomputed in function-factories.checks.R (R 4.5.2).
+
+  Build (write the zip outside the skill folder; a ready-made copy is in
+  the repository's samples/canvas-quizbank/):
+    python3 ../../scripts/build_qti.py function-factories.yaml \
+      -o <out>/function-factories.qti.zip --review-md function-factories.review.md
+
+questions:
+  # ------------------------------------------------------- closures (10.2)
+  - id: ff-001
+    topic: function-factories
+    objective: closures
+    difficulty: easy
+    status: draft
+    source: "Advanced R (2e) §10.2.1"
+    verified: run
+    title: "Two functions from one factory"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      ```r
+      power <- function(exp) {
+        function(x) x^exp
+      }
+      square <- power(2)
+      cube <- power(3)
+      c(square(4), cube(2))
+      ```
+
+      What does the last line print?
+    choices:
+      - '`64 8`'
+      - '`16 8`'
+      - '`16 16`'
+      - '`Error: object ''exp'' not found`'
+    answer: 1
+    explanation: |
+      Each call of `power()` creates a new environment holding its own `exp`,
+      and the returned function keeps that environment, so `square()` uses
+      2 and `cube()` uses 3: $4^2 = 16$ and $2^3 = 8$. The environment
+      survives after `power()` returns, so there is no error, and the two
+      functions do not share one `exp`.
+
+  - id: ff-002
+    topic: function-factories
+    objective: lazy-evaluation
+    difficulty: medium
+    status: draft
+    source: "Advanced R (2e) §10.2.3"
+    verified: run
+    title: "The argument changes before the first call"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      ```r
+      power <- function(exp) {
+        function(x) x^exp
+      }
+      e <- 2
+      square <- power(e)
+      e <- 3
+      square(2)
+      ```
+
+      What does the last line print?
+    choices:
+      - '`4`'
+      - '`9`'
+      - '`8`'
+      - '`Error: object ''e'' not found`'
+    answer: 2
+    explanation: |
+      R evaluates an argument lazily: `exp` is a promise to compute `e`,
+      and nothing forces it inside `power()`. The first call `square(2)`
+      evaluates it, when `e` is already 3, so the result is $2^3 = 8$.
+      Forcing the argument in the factory, `force(exp)`, would fix the value
+      at 2 and print 4. The value 9 swaps base and exponent.
+
+  - id: ff-003
+    topic: function-factories
+    objective: lazy-evaluation
+    difficulty: hard
+    status: draft
+    source: "Advanced R (2e) §10.2.3, §10.5"
+    verified: run
+    title: "Functions created in a for loop"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      ```r
+      adders <- list()
+      for (i in 1:3) {
+        adders[[i]] <- function(x) x + i
+      }
+      adders[[1]](10)
+      ```
+
+      What does the last line print?
+    choices:
+      - '`13`'
+      - '`11`'
+      - '`10`'
+      - '`Error: object ''i'' not found`'
+    answer: 0
+    explanation: |
+      The loop does not create a new environment per iteration: all three
+      functions are created in the global environment and look up `i` there
+      when they are called. By then the loop has finished and `i` is 3, so
+      the call returns $10 + 3 = 13$. Getting 11 needs a factory that forces
+      its argument, so each function has its own enclosing environment with
+      its own `i`. Only after `rm(i)` would the call fail.
+
+  - id: ff-004
+    topic: function-factories
+    objective: state
+    difficulty: medium
+    status: draft
+    source: "Advanced R (2e) §10.2.4"
+    verified: run
+    title: "Two counters"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      ```r
+      new_counter <- function() {
+        i <- 0
+        function() {
+          i <<- i + 1
+          i
+        }
+      }
+      a <- new_counter()
+      b <- new_counter()
+      c(a(), a(), b(), a())
+      ```
+
+      What does the last line print?
+    choices:
+      - '`1 2 3 4`'
+      - '`1 1 1 1`'
+      - '`1 2 2 3`'
+      - '`1 2 1 3`'
+    answer: 3
+    explanation: |
+      `<<-` updates `i` in the enclosing environment, so each counter keeps
+      its count between calls. `a` and `b` come from separate calls of
+      `new_counter()`, so they have separate environments: `a` counts
+      1, 2, 3 while `b` starts its own count at 1. `1 2 3 4` would need one
+      shared `i`, and `1 1 1 1` would need a fresh `i` on every call.
+
+  - id: ff-005
+    topic: function-factories
+    objective: state
+    difficulty: medium
+    status: draft
+    source: "Advanced R (2e) §10.2.4"
+    verified: run
+    title: "A counter that uses <-"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      ```r
+      new_counter <- function() {
+        i <- 0
+        function() {
+          i <- i + 1
+          i
+        }
+      }
+      a <- new_counter()
+      c(a(), a(), a())
+      ```
+
+      What does the last line print?
+    choices:
+      - '`1 1 1`'
+      - '`1 2 3`'
+      - '`0 0 0`'
+      - '`0 1 2`'
+    answer: 0
+    explanation: |
+      Inside the returned function, `i <- i + 1` reads `i` from the
+      enclosing environment (0) but assigns to a new local `i` that
+      disappears when the call ends. Every call therefore computes
+      $0 + 1 = 1$, and the enclosing `i` stays 0. Only `<<-` writes to the
+      enclosing environment and lets the count grow.
+
+  - id: ff-009
+    topic: function-factories
+    objective: memory
+    difficulty: hard
+    status: draft
+    source: "Advanced R (2e) §10.2.5"
+    verified: run
+    title: "What a returned function keeps alive"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      ```r
+      f1 <- function(n) {
+        x <- runif(n)
+        m <- mean(x)
+        function() m
+      }
+      f2 <- function(n) {
+        x <- runif(n)
+        m <- mean(x)
+        rm(x)
+        function() m
+      }
+      g1 <- f1(1e6)
+      g2 <- f2(1e6)
+      ```
+
+      After this runs, how many of the random numbers stay in memory
+      because `g1` and `g2` exist?
+    choices:
+      - 'none for `g1`, none for `g2`'
+      - '$10^6$ for `g1`, $10^6$ for `g2`'
+      - '$10^6$ for `g1`, none for `g2`'
+      - 'none for `g1`, $10^6$ for `g2`'
+    answer: 2
+    explanation: |
+      A returned function keeps its whole enclosing environment, including
+      variables it never uses. `g1` uses only `m`, but its environment
+      still holds the $10^6$ doubles in `x` (about 8 MB). `f2` removes `x`
+      before returning, so `g2`'s environment holds only `m` and `n`.
+
+  # --------------------------------------------- statistical factories (10.4)
+  - id: ff-006
+    topic: function-factories
+    objective: box-cox
+    difficulty: medium
+    status: draft
+    source: "Advanced R (2e) §10.4.1"
+    verified: run
+    title: "Box-Cox values at x = 4"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      The Box-Cox transform with parameter $\lambda$ maps $x > 0$ to
+
+      $$y_\lambda(x) = \begin{cases} \dfrac{x^\lambda - 1}{\lambda}, & \lambda \neq 0, \\[4pt] \log x, & \lambda = 0. \end{cases}$$
+
+      A student tabulates the transform at $x = 4$:
+
+      | $\lambda$ | $y_\lambda(4)$ |
+      |:---:|:---:|
+      | $1$ | $3$ |
+      | $0.5$ | $1$ |
+      | $0$ | $\log 4$ |
+      | $-1$ | $0.75$ |
+      | $2$ | $7.5$ |
+
+      Exactly one row is wrong. Which one?
+    choices:
+      - '$\lambda = 1$'
+      - '$\lambda = 0.5$'
+      - '$\lambda = -1$'
+      - '$\lambda = 2$'
+    answer: 1
+    explanation: |
+      At $\lambda = 0.5$: $4^{0.5} = 2$, so $y = (2 - 1)/0.5 = 2$, not 1;
+      the table forgot to divide by $\lambda$. The other rows check out:
+      $(4 - 1)/1 = 3$, $(1/4 - 1)/(-1) = 0.75$ and $(16 - 1)/2 = 7.5$.
+
+  - id: ff-007
+    topic: function-factories
+    objective: box-cox
+    difficulty: easy
+    status: draft
+    source: "Advanced R (2e) §10.4.1"
+    verified: run
+    title: "Box-Cox without the special case"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      ```r
+      boxcox <- function(lambda) {
+        function(x) (x^lambda - 1) / lambda
+      }
+      boxcox(0)(5)
+      ```
+
+      What does the last line print?
+    choices:
+      - '`1.609438`'
+      - '`0`'
+      - '`Inf`'
+      - '`NaN`'
+    answer: 3
+    explanation: |
+      With $\lambda = 0$ the formula computes $(5^0 - 1)/0 = 0/0$, which is
+      `NaN` in floating point. The transform's value at $\lambda = 0$ is the
+      limit $\log 5 \approx 1.609$, which the code never computes; that is
+      why the transform needs a separate branch for $\lambda = 0$.
+
+  - id: ff-010
+    topic: function-factories
+    objective: likelihood
+    difficulty: easy
+    status: draft
+    source: "Advanced R (2e) §10.4.3"
+    verified: run
+    title: "Maximizing a Poisson log-likelihood"
+    type: numerical
+    points: 1
+    question: |
+      The counts $x = (2, 4, 3, 7)$ are modeled as independent
+      Poisson($\lambda$) draws, with log-likelihood
+      $\ell(\lambda) = \log(\lambda) \sum_i x_i - n\lambda - \sum_i \log(x_i!)$.
+
+      Enter the value of $\lambda$ that maximizes $\ell(\lambda)$.
+    answer:
+      value: 4
+      tolerance: 0.01
+    explanation: |
+      Setting $\ell'(\lambda) = \sum_i x_i / \lambda - n = 0$ gives
+      $\hat\lambda = \bar{x} = 16/4 = 4$.
+
+  - id: ff-011
+    topic: function-factories
+    objective: likelihood
+    difficulty: medium
+    status: draft
+    source: "Advanced R (2e) §10.4.3"
+    verified: run
+    title: "A term that does not move the maximum"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      For counts $x_1, \dots, x_n$ modeled as Poisson($\lambda$), the
+      log-likelihood is
+
+      $$\ell(\lambda) = \log(\lambda) \sum_{i=1}^{n} x_i \;-\; n\lambda \;-\; \sum_{i=1}^{n} \log(x_i!).$$
+
+      Which term can be left out of the code without changing the value of
+      $\lambda$ that maximizes $\ell$?
+    choices:
+      - '$\log(\lambda) \sum_i x_i$'
+      - '$n\lambda$'
+      - '$\sum_i \log(x_i!)$'
+      - 'none of the three'
+    answer: 2
+    explanation: |
+      $\sum_i \log(x_i!)$ does not depend on $\lambda$: it shifts the curve
+      up or down without moving its peak. The other two terms both depend
+      on $\lambda$; without $n\lambda$, for example, $\ell$ increases
+      forever and has no maximum.
+
+  - id: ff-012
+    topic: function-factories
+    objective: precomputation
+    difficulty: hard
+    status: draft
+    source: "Advanced R (2e) §10.4.3"
+    verified: run
+    title: "Work done once versus on every call"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      ```r
+      ll1 <- function(x) {
+        function(lambda) {
+          log(lambda) * sum(x) - length(x) * lambda - sum(lfactorial(x))
+        }
+      }
+      ll2 <- function(x) {
+        s <- sum(x)
+        n <- length(x)
+        lf <- sum(lfactorial(x))
+        function(lambda) log(lambda) * s - n * lambda - lf
+      }
+      ```
+
+      Each factory is called once on $n$ counts, and an optimizer then calls
+      the returned function $k$ times. What is the total cost of the factory
+      call and the $k$ calls?
+    choices:
+      - '`ll1`: $\Theta(n + k)$; `ll2`: $\Theta(kn)$'
+      - '`ll1`: $\Theta(kn)$; `ll2`: $\Theta(kn)$'
+      - '`ll1`: $\Theta(n + k)$; `ll2`: $\Theta(n + k)$'
+      - '`ll1`: $\Theta(kn)$; `ll2`: $\Theta(n + k)$'
+    answer: 3
+    explanation: |
+      `ll1`'s returned function recomputes `sum(x)`, `length(x)` and
+      `sum(lfactorial(x))` on every call, $\Theta(n)$ each time, so $k$
+      calls cost $\Theta(kn)$. `ll2` does the $\Theta(n)$ work once in the
+      factory, and each call is then $\Theta(1)$: $\Theta(n + k)$ in total.
+
+  - id: ff-013
+    topic: function-factories
+    objective: state
+    difficulty: medium
+    status: draft
+    source: "Advanced R (2e) §10.2.4, §10.4.2"
+    verified: run
+    title: "Which returned functions can change"
+    type: multiple_answers
+    points: 1
+    shuffle_answers: true
+    question: |
+      Each factory below is called once (with `x <- 1:10` where it takes an
+      argument) and returns a function `g` with no arguments. For which
+      factories can two consecutive calls `g(); g()` return different
+      values? Select all that apply.
+    choices:
+      - '`function() { i <- 0; function() { i <<- i + 1; i } }`'
+      - '`function(x) { force(x); function() mean(sample(x, replace = TRUE)) }`'
+      - '`function(x) { m <- mean(x); function() m }`'
+      - '`function(x) { force(x); function() max(x) }`'
+    answer: [0, 1]
+    explanation: |
+      The first function changes its own state with `<<-`, so it returns
+      1, then 2. The second draws a new bootstrap resample on every call,
+      so its mean varies. The third returns a mean computed once in the
+      factory, and the fourth recomputes `max(x)` on data that never
+      changes, so both return the same value every time.
+
+  - id: ff-014
+    topic: function-factories
+    objective: bootstrap
+    difficulty: medium
+    status: draft
+    source: "Advanced R (2e) §10.4.2"
+    verified: run
+    title: "Values a bootstrap mean can take"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      ```r
+      boot_mean <- function(x) {
+        force(x)
+        function() mean(sample(x, length(x), replace = TRUE))
+      }
+      b <- boot_mean(c(1, 2, 3))
+      ```
+
+      Which value can `b()` never return?
+    choices:
+      - '`1`'
+      - '`2`'
+      - '`2.5`'
+      - '`3`'
+    answer: 2
+    explanation: |
+      Each call averages three values drawn with replacement from 1, 2 and
+      3, so it returns (sum of three draws)/3 with a whole-number sum from
+      3 to 9. A mean of 2.5 needs a sum of 7.5, which is impossible. Means
+      of 1 (1, 1, 1), 2 (e.g. 1, 2, 3) and 3 (3, 3, 3) can all occur.
+
+  - id: ff-015
+    topic: function-factories
+    objective: bootstrap
+    difficulty: easy
+    status: draft
+    source: "Advanced R (2e) §10.4.2"
+    verified: run
+    title: "How often the model is fitted"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      ```r
+      boot_resid <- function(df, formula) {
+        fit <- lm(formula, data = df)
+        fitted <- unname(fitted(fit))
+        resid <- unname(resid(fit))
+        function() fitted + sample(resid)
+      }
+      gen <- boot_resid(mtcars, mpg ~ wt)
+      sims <- replicate(1000, gen())
+      ```
+
+      How many times does `lm()` run in this code?
+    choices:
+      - '`1000`'
+      - '`1`'
+      - '`1001`'
+      - '`0`'
+    answer: 1
+    explanation: |
+      `lm()` runs once, inside the factory call `boot_resid(mtcars, mpg ~ wt)`.
+      The returned function only adds a permutation of the stored residuals
+      to the stored fitted values, so the 1000 calls made by `replicate()`
+      never refit the model. Doing the expensive setup once in the factory
+      is the point of this design.
+
+  - id: ff-016
+    topic: function-factories
+    objective: likelihood
+    difficulty: medium
+    status: draft
+    source: "Advanced R (2e) §10.4.3"
+    verified: run
+    title: "Reading a log-likelihood curve"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      The figure shows the Poisson log-likelihood $\ell(\lambda)$ of
+      $n = 10$ counts; the dashed line marks its maximum.
+
+      ![Line plot of the log-likelihood against lambda from 20 to 45. The curve rises to a single smooth peak and falls again; a dashed vertical line marks the peak at lambda = 32.](figures/loglik.png)
+
+      Which statement about the ten counts must be true?
+    choices:
+      - 'Their median is 32.'
+      - 'Their mean is 32.'
+      - 'Their largest value is 32.'
+      - 'Their sum is 32.'
+    answer: 1
+    explanation: |
+      The Poisson log-likelihood is maximized at $\hat\lambda = \bar{x}$, so
+      the peak at 32 says the mean of the counts is 32 (their sum is
+      therefore 320). The curve says nothing definite about the median or
+      the largest value; in this sample they are 31.5 and 40.
+
+  - id: ff-017
+    topic: function-factories
+    objective: closures
+    difficulty: easy
+    status: draft
+    source: "Advanced R (2e) §10.2.1"
+    verified: run
+    title: "Arguments outlive the factory call"
+    type: true_false
+    points: 1
+    question: |
+      True or false: in R, a function returned by a function factory can
+      still use the factory's arguments after the factory call has
+      returned.
+    answer: true
+    explanation: |
+      True. The returned function's enclosing environment is the execution
+      environment of the factory call, and R keeps that environment alive
+      as long as the returned function exists.
+
+  - id: ff-018
+    topic: function-factories
+    objective: factories-in-base-r
+    difficulty: easy
+    status: draft
+    source: "Advanced R (2e) §10.3"
+    verified: run
+    title: "An empirical CDF as a function"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      `ecdf(x)` returns the empirical distribution function of the data
+      `x`, $\hat F(t) = \#\{i : x_i \le t\} / n$, as an R function.
+
+      ```r
+      Fn <- ecdf(c(3, 1, 4, 1, 5))
+      Fn(2)
+      ```
+
+      What does the last line print?
+    choices:
+      - '`0.2`'
+      - '`0.4`'
+      - '`0.5`'
+      - '`2`'
+    answer: 1
+    explanation: |
+      Two of the five values (both 1s) are at most 2, so
+      $\hat F(2) = 2/5 = 0.4$. 0.2 counts the distinct value 1 once, and 2
+      is the count without dividing by $n$.
+
+  - id: ff-019
+    topic: function-factories
+    objective: factories-and-functionals
+    difficulty: hard
+    status: draft
+    source: "Advanced R (2e) §10.5"
+    verified: run
+    title: "A named list of power functions"
+    type: multiple_choice
+    points: 1
+    shuffle_answers: true
+    question: |
+      `lapply()` keeps the names of its input in the list it returns.
+
+      ```r
+      power <- function(exp) {
+        force(exp)
+        function(x) x^exp
+      }
+      funs <- lapply(c(square = 2, cube = 3, root = 0.5), power)
+      funs$root(64) + funs$cube(2)
+      ```
+
+      What does the last line print?
+    choices:
+      - '`16`'
+      - '`72`'
+      - '`12`'
+      - '`4104`'
+    answer: 0
+    explanation: |
+      `funs` holds three functions with exponents 2, 3 and 0.5, named
+      `square`, `cube` and `root`. `funs$root(64)` is $64^{0.5} = 8$ and
+      `funs$cube(2)` is $2^3 = 8$, so the sum is 16. 72 uses $64 + 8$
+      (no root), 12 uses $64^{0.5} + 2^2$, and 4104 uses $64^2 + 2^3$.

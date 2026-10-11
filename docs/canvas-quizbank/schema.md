@@ -1,0 +1,1 @@
+--8<-- "skills/canvas-quizbank/references/schema.md"
